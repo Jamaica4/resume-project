@@ -94,29 +94,34 @@ border-top: 4px solid rgb(129, 157, 216);
 header h2 {
     font-size: 17px;
     padding: 20px 0 20px 0;
+    white-space: nowrap;
     text-align: right;
 }
 
-header a {
-    float: right;
-    display: black;
+nav {
+    display: flex;
+    justify-content: right;
+}
+
+nav a {
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 14px 16px;
     background-color:#d8ebf8;
 }
 
-a.active{
+nav a.active {
     background-color:rgb(190, 202, 255);
 }
 
-header a:hover {
+nav a:hover {
 background-color: rgb(196, 226, 238);
 }
 
 header, 
-footer, 
-article {
+nav,
+article,
+footer {
 padding: 0 15% 0 15%;
 }
 
@@ -219,10 +224,23 @@ input[type=text], select, textarea {
     padding: 20px;
   }
 
+@media screen and (max-width: 1150px) {
+    header h2 {
+        clear: left;
+        text-align: unset;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .column {
         width: 50%;
     }
+
+nav {
+justify-content: unset;
+flex-direction: column;
+padding: 0;
+}
 }
 
 @media screen and (max-width: 600px) {
